@@ -45,8 +45,8 @@ void main() {
     vec3 normal = a_normal_ed.xyz;
     float edgedistance = a_normal_ed.w;
 
-    vec2 display_size_a = (pattern_br_a - (pattern_tl_a) / (pixelRatio * pixel_ratio_from);
-    vec2 display_size_b = (pattern_br_b - (pattern_tl_b) / (pixelRatio * pixel_ratio_to);
+    vec2 display_size_a = (pattern_br_a - pattern_tl_a) / (pixelRatio * pixel_ratio_from);
+    vec2 display_size_b = (pattern_br_b - pattern_tl_b) / (pixelRatio * pixel_ratio_to);
 
     base = max(0.0, base);
     height = max(0.0, height);

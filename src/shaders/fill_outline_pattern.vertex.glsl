@@ -35,8 +35,8 @@ void main() {
 
     gl_Position = u_matrix * vec4(a_pos, 0, 1);
 
-    vec2 display_size_a = (pattern_br_a - (pattern_tl_a) / (pixelRatio * pixel_ratio_from);
-    vec2 display_size_b = (pattern_br_b - (pattern_tl_b) / (pixelRatio * pixel_ratio_to);
+    vec2 display_size_a = (pattern_br_a - pattern_tl_a) / (pixelRatio * pixel_ratio_from);
+    vec2 display_size_b = (pattern_br_b - pattern_tl_b) / (pixelRatio * pixel_ratio_to);
 
     v_pos_a = get_pattern_pos(u_pixel_coord_upper, u_pixel_coord_lower, fromScale * display_size_a, tileRatio, a_pos);
     v_pos_b = get_pattern_pos(u_pixel_coord_upper, u_pixel_coord_lower, toScale * display_size_b, tileRatio, a_pos);

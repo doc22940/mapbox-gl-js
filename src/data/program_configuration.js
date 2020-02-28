@@ -104,7 +104,7 @@ class ConstantBinder implements UniformBinder {
         uniform.set(currentValue.constantOr(this.value));
     }
 
-    getBinding(context: Context, location: WebGLUniformLocation, name: string): $Shape<Uniform<any>> {
+    getBinding(context: Context, location: WebGLUniformLocation, _: string): $Shape<Uniform<any>> {
         return (this.type === 'color') ?
             new UniformColor(context, location) :
             new Uniform1f(context, location);
@@ -127,8 +127,8 @@ class CrossFadedConstantBinder implements UniformBinder {
     }
 
     setConstantPatternPositions(posTo: ImagePosition, posFrom: ImagePosition) {
-        this.pixelRatioFrom = [posFrom.pixelRatio];
-        this.pixelRatioTo = [posTo.pixelRatio];
+        this.pixelRatioFrom = posFrom.pixelRatio;
+        this.pixelRatioTo = posTo.pixelRatio;
         this.patternFrom = posFrom.tlbr;
         this.patternTo = posTo.tlbr;
     }
@@ -293,7 +293,7 @@ class CompositeExpressionBinder implements AttributeBinder, UniformBinder {
         uniform.set(factor);
     }
 
-    getBinding(context: Context, location: WebGLUniformLocation, name: string): Uniform1f {
+    getBinding(context: Context, location: WebGLUniformLocation, _: string): Uniform1f {
         return new Uniform1f(context, location);
     }
 }
